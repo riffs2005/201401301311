@@ -8,6 +8,7 @@ public class BinaryTree {
    * and pointers to its right and left children (or null).
    */
   static class Node {
+    int  key;
     int  value;
     Node left   = null;
     Node right  = null;
@@ -15,8 +16,9 @@ public class BinaryTree {
     /**
      * Create a new node with no children.
      */
-    Node (int value) {
-      this.value = value;
+    Node (int key, int value) {
+    	this.key = key;
+    	this.value = value;
     }
     
     /**
@@ -40,7 +42,7 @@ public class BinaryTree {
      * Insert value into the binary tree rooted by this node, creating a new node for value.
      */
     void insert (int value) {
-      Node n = new Node (value);
+      Node n = new Node (key, value);
       insertNode (n);
     }
     
@@ -61,7 +63,7 @@ public class BinaryTree {
    * Create a node to root a new tree, populate it with a few values, and print it.
    */
   public static void main (String[] args) {
-    Node root = new Node (100);
+    Node root = new Node (1, 100);
     root.insert (10);
     root.insert (120);
     root.insert (130);
